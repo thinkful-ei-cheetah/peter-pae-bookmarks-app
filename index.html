@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -8,13 +8,52 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    
 </head>
 <body>
     <div class="container">
         <h1>Bookmarks</h1>
+        <div class="star-rating js-star-rating">
+            <span class="star">star</span>
+            <span class="star">star</span>
+            <span class="star">star</span>
+            <span class="star">star</span>
+            <span class="star">star</span>
+        </div>
+        <button type="add-bookmark">Add bookmark</button>
+        <button type="reset-minRate">reset</button>
         <ul class="bookmarks-list js-bookmarks-list">
-            
+            <li class="js-bookmark-element condensed">
+                <h2 class="title-bar js-title-bar">bookmark title</h2>
+                <div class="star-rating js-star-rating">
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                </div>
+            </li>
+
+            <li class="js-bookmark-element expanded">
+                <h2 class="title-bar js-title-bar">bookmark title</h2>
+                <div class="bookmark-description">DESCRIPTION: Lorem ipsum dolor sit amet consectetur.</div>
+                <div class="bookmark-controls">
+                    <button class="shopping-item-toggle js-item-toggle">
+                        <span class="button-label">Visit</span>
+                    </button>
+                    <button class="shopping-item-delete js-item-delete">
+                        <span class="button-label">Delete</span>
+                    </button>
+                </div>
+                <div class="star-rating js-star-rating">
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                    <span class="star">star</span>
+                </div>
+            </li>
+
         </ul>
     </div>
 
