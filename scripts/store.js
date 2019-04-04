@@ -5,6 +5,10 @@
 const store = (function(){
     const addItem = function(item) {
         this.items.push(item);
+        this.items[0].hidden = false;
+        this.items[0].expanded = false;
+        // console.log(this.items[0].expanded);
+        // console.log(this.items[0].hidden);
     };
 
     const findById = function(id) {
