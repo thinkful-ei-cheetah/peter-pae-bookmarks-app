@@ -1,16 +1,18 @@
+/* eslint-disable indent */
 /* eslint-disable strict */
 
 
 $(document).ready(function() {
 
-  api.getItems()
+api.getItems()
   //.then(res => res.json())
     .then((items) => {
-      items.forEach((item) => store.addItem(item));
+    items.forEach((item) => store.addItem(item));
+    bookmarksList.render();
     });
 
 
-
+    
 });
 
 
