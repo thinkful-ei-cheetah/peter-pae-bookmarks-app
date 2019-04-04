@@ -1,22 +1,17 @@
 /* eslint-disable strict */
-// $(document).ready(function() {
 
 
-//     api.getIte
-// });
+$(document).ready(function() {
 
-
-// console.log(api.getItems());
-
-
-api.getItems()
-    //.then(res => res.json())
+  api.getItems()
+  //.then(res => res.json())
     .then((items) => {
-    items.forEach((item) => store.addItem(item));
+      items.forEach((item) => store.addItem(item));
     });
 
 
 
+});
 
 
 

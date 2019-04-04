@@ -40,7 +40,7 @@ const api = (function () {
             },
             body: jsonItem
         };
-        return apiFetch(`${BASE_URL}/items`, options);   
+        return apiFetch(`${BASE_URL}/bookmarks`, options);   
     }
 
     function deleteItem(id) {
@@ -50,7 +50,7 @@ const api = (function () {
                 'Content-Type': 'aplication/json'
             }
         };
-        return apiFetch(`${BASE_URL}/items/${id}`, options);
+        return apiFetch(`${BASE_URL}/bookmarks/${id}`, options);
     }
 
     return {
