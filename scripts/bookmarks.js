@@ -24,7 +24,7 @@ const bookmarksList = (function() {
             <h2 class="title-bar js-title-bar">${item.title}</h2>
                 <div class="card">
                     <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
-                    <div class="bookmark-controls">
+                    <div class="bookmark-controls js-bookmark-controls">
                         <button class="url-visit js-url-visit">
                             <span class="button-label">Visit</span>
                         </button>
@@ -181,6 +181,21 @@ const bookmarksList = (function() {
         // });
     }
 
+    function handleCardDelete() {
+        $('.js-bookmarks-list').on('click', '.js-bookmark-delete', event => {
+            const id = getItemIdFromElement(event.target);
+            api.deleteItem(id)
+            .then(() => {
+                store.findAndDelete(id);
+                render();
+            })
+            .catch(error => {
+                console.log('error');
+            });
+            console.log('delete ran');
+        });
+    }
+
     function bindEventListeners() {
         handleTitleClicked();
         handleAddClicked();
@@ -188,6 +203,7 @@ const bookmarksList = (function() {
         handleStarFilterClicked();
         handleCreateClicked();
         handleModalCancel();
+        handleCardDelete();
     }
 
     return {
