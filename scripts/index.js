@@ -4,6 +4,9 @@
 
 $(document).ready(function() {
 
+bookmarksList.bindEventListeners();
+bookmarksList.render();
+
 api.getItems()
   //.then(res => res.json())
     .then((items) => {

@@ -19,6 +19,13 @@ const store = (function(){
         this.items = this.items.filter(item => item.id !== id);
     };
     
+    const findAndUpdate = function(id, newData) {
+        // if ( validateName(id) )
+        let item = this.findById(id);
+        return Object.assign(item, newData);
+        
+    };
+
     return {
         items: [],
         adding: false,
@@ -27,5 +34,6 @@ const store = (function(){
         addItem,
         findById,
         findAndDelete,
+        findAndUpdate,
     };
 }());

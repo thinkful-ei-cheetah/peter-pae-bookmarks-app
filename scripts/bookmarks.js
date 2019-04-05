@@ -20,7 +20,7 @@ const bookmarksList = (function() {
     
         if(expanded){
         return `
-            <li class="js-item-element ${expanded}" data-item-id="${item.id}">        
+            <li class="js-bookmark-element ${expanded}" data-item-id="${item.id}">        
             <h2 class="title-bar js-title-bar">${item.title}</h2>
                 <div class="card">
                     <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
@@ -40,10 +40,12 @@ const bookmarksList = (function() {
     }
         else {
             
-            return `<li class="js-bookmark-element">
-            <h2 class="title-bar js-title-bar">${item.title}</h2>
-            <div class="star-rating js-star-rating">
-            ${sRating(item.rating)}
+            return `<li class="js-bookmark-element" data-item-id="${item.id}">
+            <div class="mark">
+                <h2 class="title-bar js-title-bar">${item.title}</h2>
+                <div class="star-rating js-star-rating">
+                ${sRating(item.rating)}
+                </div>
             </div>
         </li>`;
     }
@@ -65,11 +67,39 @@ const bookmarksList = (function() {
     }
 
 
+    function getItemIdFromElement(item) {
+        return $(item)
+        .closest('.js-bookmark-element')
+        .data('item-id');
+    }
 
+    function handleTitleClicked() {
+        $('.js-bookmarks-list').on('click', '.js-title-bar', event => {
+            
+            console.log('title was clicked');
+            
+            const id = getItemIdFromElement(event.currentTarget); 
+            const item = store.findById(id);
 
+            item.expanded = !item.expanded;
+            
+            // const checkObj = { checked: item.checked };
+            // api.updateItem(id, checkObj);
+            // store.findAndUpdate(id, checkObj);
+            render();
+        });
+    }
+
+    function handleAddClicked() {
+        $('.container').on('click', '.js-add-bookmark', event => {
+            const id = event.target;
+        console.log(`${id} was clicked`)});
+    }
 
     function bindEventListeners() {
-        sRating();
+        handleTitleClicked();
+        handleAddClicked();
+    
     }
 
     return {
