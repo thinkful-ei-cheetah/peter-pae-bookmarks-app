@@ -66,8 +66,44 @@
         </ul>
     </div>
 
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+                <span>
+                        <button class="modal-cancel-button js-modal-cancel-button">
+                                <span class="button-label">&times;</span>
+                            </button>
+                    </span>
+            <form id="js-bookmarks-form" class="modal-form">
+                    <div class="in-form">
+                        <div class="form-entry">
+                            <label for="bookmarks-entry">Title</label>
+                            <input type="text" name="title"  class="js-bookmarks-entry" placeholder="Title">
+                        </div>
+                        <div class="form-entry">
+                            <label for="bookmarks-entry">URL</label>
+                            <input type="text" name="url"  class="js-bookmarks-entry" placeholder="URL">
+                        </div>
+                        <div class="form-entry">
+                            <label for="bookmarks-entry">Description</label>
+                            <input type="text" name="desc"  class="js-bookmarks-entry" placeholder="Description">
+                        </div>
+                        <div class="form-entry">
+                            <label for="bookmarks-entry">Rating</label>
+                            <input type="number" name="rating" value="5" min="1" max="5" class="js-bookmarks-entry" placeholder="1-5">
+                        </div>
+                        
+                        <div class="form-controls js-form-controls">
+                                
+                                <button class="modal-bookmark-create js-modal-bookmark-create" type="submit">
+                                    <span class="button-label">Create</span>
+                                </button>
+                        </div>
+                    </div>
 
-    <div id="modal" class="modal"></div>
+            </form>
+            
+        </div>
+    </div>
 
 
 

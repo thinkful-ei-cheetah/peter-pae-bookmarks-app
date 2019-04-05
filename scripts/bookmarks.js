@@ -62,6 +62,14 @@ const bookmarksList = (function() {
             items = items.filter(item => item.rating >= store.minRate);
         }
 
+        if (store.adding){
+            $('#modal').attr('class','modal');
+        }
+
+        if (!store.adding){
+            $('#modal').attr('class','modal hidden');
+        }
+
         const bookmarksItemsString = generateBookmarksString(items);
         $('.js-bookmarks-list').html(bookmarksItemsString);
     }
@@ -76,7 +84,7 @@ const bookmarksList = (function() {
     function handleTitleClicked() {
         $('.js-bookmarks-list').on('click', '.js-title-bar', event => {
             
-            console.log('title was clicked');
+            // console.log('title was clicked');
             
             const id = getItemIdFromElement(event.currentTarget); 
             const item = store.findById(id);
@@ -91,10 +99,11 @@ const bookmarksList = (function() {
     }
 
     function handleAddClicked() {
-        $('.container').on('click', '.js-add-bookmark', event => {
-            const id = event.target;
-        console.log(`${id} was clicked`)});
-    }
+        $('.container').on('click', '.js-add-bookmark', () => {
+            store.adding = true;
+            render();
+    });
+}
 
     function handleResetClicked(){
         $('.container').on('click', '.js-reset-minRate', event => {
@@ -107,39 +116,78 @@ const bookmarksList = (function() {
     function handleStarFilterClicked() {
         $('.js-star-rating').on('click', '#star1', event => {
             store.minRate = 1;
-            console.log(store.minRate);
             render();
         });
-
         $('.js-star-rating').on('click', '#star2', event => {
             store.minRate = 2;
-            console.log(store.minRate);
             render();
         });
         $('.js-star-rating').on('click', '#star3', event => {
             store.minRate = 3;
-            console.log(store.minRate);
             render();
         });
         $('.js-star-rating').on('click', '#star4', event => {
             store.minRate = 4;
-            console.log(store.minRate);
             render();
         });
         $('.js-star-rating').on('click', '#star5', event => {
             store.minRate = 5;
-            console.log(store.minRate);
             render();
         });
     }
 
+    $.fn.extend({
+        serializeJson: function() {
+            const obj = {};
+            const formData = new FormData(this[0]);
+            formData.forEach((val,key) => {
+                obj[key] = val;
+            });
+            return JSON.stringify(obj);
+        }
+    });
+
+    function handleCreateClicked() {
+        $('#js-bookmarks-form').submit(function(event) {
+            event.preventDefault();
+            const data = $(event.target).serializeJson();
+            console.log(data);
+            api.createItem(data)
+            .then((newItem) => {
+                store.addItem(newItem);
+                document.getElementById("js-bookmarks-form").reset();
+                store.adding = false;
+                render();})
+            .catch(error => console.log(error));
+            console.log('create ran');
+            
+        });
+    }
+
+    function handleModalCancel() {
+        $('.modal-content').on('click','.js-modal-cancel-button', () => {
+            store.adding = false;
+            console.log('cancel was clicked');
+            document.getElementById("js-bookmarks-form").reset();
+            render();
+
+        });
+
+        // $('body').on('click','.modal', event => {
+            
+        //     console.log(event.target);
+        //     store.adding = false;
+        //     render();
+        // });
+    }
 
     function bindEventListeners() {
         handleTitleClicked();
         handleAddClicked();
         handleResetClicked();
         handleStarFilterClicked();
-    
+        handleCreateClicked();
+        handleModalCancel();
     }
 
     return {

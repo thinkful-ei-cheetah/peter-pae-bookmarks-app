@@ -28,11 +28,8 @@ const api = (function () {
         return apiFetch(`${BASE_URL}/bookmarks`);
     }
 
-    function createItem(name) {
-        let newItem = {
-            name
-        };
-        const jsonItem = JSON.stringify(newItem);
+    function createItem(data) {
+        const jsonItem = data;
         const options = {
             method: 'POST',
             headers: {
