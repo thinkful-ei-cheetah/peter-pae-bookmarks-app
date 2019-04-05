@@ -196,6 +196,15 @@ const bookmarksList = (function() {
         });
     }
 
+    function handleCardVisit() {
+        $('.js-bookmarks-list').on('click', '.js-url-visit', event => {
+            const id = getItemIdFromElement(event.target);
+            let card = store.findById(id);
+            window.open(`${card.url}`, '_blank');
+            console.log(card.url);
+        });
+    }
+
     function bindEventListeners() {
         handleTitleClicked();
         handleAddClicked();
@@ -204,6 +213,7 @@ const bookmarksList = (function() {
         handleCreateClicked();
         handleModalCancel();
         handleCardDelete();
+        handleCardVisit();
     }
 
     return {
