@@ -96,9 +96,49 @@ const bookmarksList = (function() {
         console.log(`${id} was clicked`)});
     }
 
+    function handleResetClicked(){
+        $('.container').on('click', '.js-reset-minRate', event => {
+            store.minRate = 0;
+            console.log(store.minRate);
+            render();
+        });
+}
+
+    function handleStarFilterClicked() {
+        $('.js-star-rating').on('click', '#star1', event => {
+            store.minRate = 1;
+            console.log(store.minRate);
+            render();
+        });
+
+        $('.js-star-rating').on('click', '#star2', event => {
+            store.minRate = 2;
+            console.log(store.minRate);
+            render();
+        });
+        $('.js-star-rating').on('click', '#star3', event => {
+            store.minRate = 3;
+            console.log(store.minRate);
+            render();
+        });
+        $('.js-star-rating').on('click', '#star4', event => {
+            store.minRate = 4;
+            console.log(store.minRate);
+            render();
+        });
+        $('.js-star-rating').on('click', '#star5', event => {
+            store.minRate = 5;
+            console.log(store.minRate);
+            render();
+        });
+    }
+
+
     function bindEventListeners() {
         handleTitleClicked();
         handleAddClicked();
+        handleResetClicked();
+        handleStarFilterClicked();
     
     }
 
