@@ -24,6 +24,7 @@ button:hover:disabled {
 
 .container {
     max-width: 600px;
+    min-width: 210px;
     margin: 0 auto;
     background-color: rgb(248, 245, 245);
 }
@@ -69,6 +70,12 @@ button:hover:disabled {
     background-color: white;
 }
 
+.card-button {
+    color: white;
+    background-color: black;
+    border:none;
+}
+
 .bookmark-description{
     
     width:66%;
@@ -104,6 +111,20 @@ button:hover:disabled {
 .modal-cancel-button{
     display:inline;
     float:right;
+}
+
+.add-bookmark{
+    position: fixed;
+    right: 20%;
+    height: 6rem;
+    width: 6rem;
+    background-color: rgb(135, 211, 135);
+    color: white;
+    border-radius: 50%;
+    border: none;
+    display: inline-block;
+    font-size: 4.2rem;
+    z-index: 2;
 }
 
 

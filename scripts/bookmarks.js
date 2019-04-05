@@ -25,10 +25,10 @@ const bookmarksList = (function() {
                 <div class="card">
                     <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
                     <div class="bookmark-controls js-bookmark-controls">
-                        <button class="url-visit js-url-visit">
+                        <button class="url-visit js-url-visit card-button">
                             <span class="button-label">Visit</span>
                         </button>
-                        <button class="bookmark-delete js-bookmark-delete">
+                        <button class="bookmark-delete js-bookmark-delete card-button">
                             <span class="button-label">Delete</span>
                         </button>
                     </div>
