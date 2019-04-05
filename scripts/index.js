@@ -18,7 +18,8 @@ api.getItems()
 
 
 // const item = { title: "Yahoo", url: "http://yahoo.com" , rating : "2"};
-
+// store.items[3].expanded = true;
+// bookmarksList.render();
 console.log(store.items);
 
 // store.findAndDelete(item);

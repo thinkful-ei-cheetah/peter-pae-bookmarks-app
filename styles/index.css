@@ -25,7 +25,7 @@ button:hover:disabled {
 .container {
     max-width: 600px;
     margin: 0 auto;
-    border-style: solid;
+    background-color: rgb(248, 245, 245);
 }
 
 .bookmarks-list {
@@ -34,10 +34,9 @@ button:hover:disabled {
 }
 
 .bookmarks-list > li {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid grey;
-    padding: 20px;
-    padding-top: 0px;
+    padding: 0px;
 }
 
 .star {
@@ -48,9 +47,39 @@ button:hover:disabled {
     color : #000000;
 }
 
+.title-bar {
+    margin: -1px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    color: white;
+    background-color: black;
+}
 
+.star-rating{
+    padding-top: 5px;
+}
 
+.card {
+    position:relative;
+    width:100%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: white;
+}
 
+.bookmark-description{
+    
+    width:66%;
+}
+
+.bookmark-controls {
+    float: right;
+    height:100%;
+
+    
+}
 
 
 

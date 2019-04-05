@@ -22,17 +22,19 @@ const bookmarksList = (function() {
         return `
             <li class="js-item-element ${expanded}" data-item-id="${item.id}">        
             <h2 class="title-bar js-title-bar">${item.title}</h2>
-                <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
-                <div class="bookmark-controls">
-                    <button class="shopping-item-toggle js-item-toggle">
-                        <span class="button-label">Visit</span>
-                    </button>
-                    <button class="shopping-item-delete js-item-delete">
-                        <span class="button-label">Delete</span>
-                    </button>
-                </div>
-                <div class="star-rating js-star-rating">
-                    ${sRating(item.rating)}
+                <div class="card">
+                    <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
+                    <div class="bookmark-controls">
+                        <button class="url-visit js-url-visit">
+                            <span class="button-label">Visit</span>
+                        </button>
+                        <button class="bookmark-delete js-bookmark-delete">
+                            <span class="button-label">Delete</span>
+                        </button>
+                    </div>
+                    <div class="star-rating js-star-rating">
+                        ${sRating(item.rating)}
+                    </div>
                 </div>
             </li>`;
     }
