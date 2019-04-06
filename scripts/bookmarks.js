@@ -21,7 +21,7 @@ const bookmarksList = (function() {
         if(expanded){
         return `
             <li class="js-bookmark-element ${expanded}" data-item-id="${item.id}">        
-            <h2 class="title-bar js-title-bar">${item.title}</h2>
+            <button class="title-bar js-title-bar" role="button" aria-label:"${item.title} bookmark">${item.title}</button>
                 <div class="card">
                     <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
                     <div class="bookmark-controls js-bookmark-controls">
@@ -42,7 +42,7 @@ const bookmarksList = (function() {
             
             return `<li class="js-bookmark-element" data-item-id="${item.id}">
             <div class="mark">
-                <h2 class="title-bar js-title-bar">${item.title}</h2>
+                <button class="title-bar js-title-bar" role="button" aria-label:"${item.title} bookmark">${item.title}</button>
                 <div class="star-rating js-star-rating">
                 ${sRating(item.rating)}
                 </div>
@@ -93,6 +93,7 @@ const bookmarksList = (function() {
             const item = store.findById(id);
 
             item.expanded = !item.expanded;
+
             
             // const checkObj = { checked: item.checked };
             // api.updateItem(id, checkObj);
@@ -111,6 +112,7 @@ const bookmarksList = (function() {
     function handleResetClicked(){
         $('.container').on('click', '.js-reset-minRate', event => {
             store.minRate = 0;
+            $('.rate').css({'checked': 'false'});
             console.log(store.minRate);
             render();
         });
