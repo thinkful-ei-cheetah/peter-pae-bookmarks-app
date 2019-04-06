@@ -219,6 +219,20 @@ const bookmarksList = (function() {
         });
     }
 
+    function handleWindowResize() {
+        $( window ).resize(function() {
+            if($(window).width() > 640){
+                store.items.forEach(items => items.expanded = true);
+                render();
+                console.log('im a big window');
+            }
+            if($(window).width() === 640) {
+                store.items.forEach(items => items.expanded = false);
+                render();
+            }
+        });
+    }
+
     function bindEventListeners() {
         handleTitleClicked();
         handleAddClicked();
@@ -228,6 +242,8 @@ const bookmarksList = (function() {
         handleModalCancel();
         handleCardDelete();
         handleCardVisit();
+        handleWindowResize();
+
     }
 
     return {
