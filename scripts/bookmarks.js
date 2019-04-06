@@ -65,7 +65,6 @@ const bookmarksList = (function() {
         if (store.adding){
             $('#modal').attr('class','modal');
             $('#bookmark-add').attr('class','hidden');
-            console.log('add true');
         }
 
         if (!store.adding){
@@ -152,22 +151,26 @@ const bookmarksList = (function() {
     });
 
     function handleCreateClicked() {
+        
+
         $('#js-bookmarks-form').submit(function(event) {
             event.preventDefault();
             const data = $(event.target).serializeJson();
-            console.log(data);
             api.createItem(data)
             .then((newItem) => {
                 store.addItem(newItem);
                 document.getElementById("js-bookmarks-form").reset();
                 store.adding = false;
+                $('.js-form-error').html('')
                 render();})
-            .catch(error => 
-
-                console.log(error));
-            console.log('create ran');
+            .catch(error => {
+                $('.js-form-error')
+                .html(`<span class="error-message js-error-message">
+                            ERROR: ${error.message}
+                    </span>`);
             
         });
+    })
     }
 
     function handleModalCancel() {
@@ -175,6 +178,7 @@ const bookmarksList = (function() {
             store.adding = false;
             console.log('cancel was clicked');
             document.getElementById("js-bookmarks-form").reset();
+            $('.js-form-error').html('');
             render();
 
         });
