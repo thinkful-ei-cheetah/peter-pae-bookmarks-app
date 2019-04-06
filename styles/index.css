@@ -102,21 +102,38 @@ button:hover:disabled {
     width:100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.3);
+    padding-top:20%;
 }
 
 .modal-content{
     background-color: #f4f4f4;
-    margin: 20% auto;
+    margin: auto; 
+    margin-bottom:70%;
     width: 70%;
     min-width: 245px;
     max-width: 500px;
     padding:10px;
+    padding-top: 0px;
+    padding-right:0px;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.15);
+}
+
+.in-form{
+    padding-top:20px;
+    padding-right:10px;
 }
 
 .modal-cancel-button{
     display:inline;
     float:right;
+    top: 0px;
+    right: 0px;
+    width:10%;
+    min-width:25px;
+    color:white;
+    font-size: large;
+    background-color: black;
+    border:1px solid rgb(83, 83, 83);
 }
 
 .add-bookmark{
@@ -133,9 +150,51 @@ button:hover:disabled {
     z-index: 2;
 }
 
+.form-entry {
+    display:block;
+    margin-bottom:10px;
+}
+.form-entry>label{
+    display:block;
+}
+
+.form-entry>input {
+    display:block;
+    width:85%;
+}
+
+.desc-form-input{
+    overflow:scroll;
+    resize: none;
+	padding: 1em;
+}
+
+.modal-bookmark-create{
+    width:100%;
+    background-color:black;
+    color: white;
+    border:none;
+    font-weight: bolder;
+}
+
+.error-message{
+    color:red;
+    margin-bottom:10px;
+    width:85%;
+}
+
+.js-filter-star>label {
+    font-size: 20px;
+    color:red;
+    border:solid;
+}
 
 
-.rate {
+
+
+
+
+/* .rate {
     float: left;
     height: 46px;
     padding: 0 10px;
@@ -169,4 +228,4 @@ button:hover:disabled {
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
     color: #474747;
-}
+} */

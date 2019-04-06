@@ -125,6 +125,7 @@ const bookmarksList = (function() {
         });
         $('.js-star-rating').on('click', '#star2', event => {
             store.minRate = 2;
+            
             render();
         });
         $('.js-star-rating').on('click', '#star3', event => {
@@ -137,6 +138,8 @@ const bookmarksList = (function() {
         });
         $('.js-star-rating').on('click', '#star5', event => {
             store.minRate = 5;
+            // getItemIdFromElement(event.target).checked = false;
+            console.log(event.target);
             render();
         });
     }
@@ -167,9 +170,9 @@ const bookmarksList = (function() {
                 render();})
             .catch(error => {
                 $('.js-form-error')
-                .html(`<span class="error-message js-error-message">
+                .html(`<div class="error-message js-error-message">
                             ERROR: ${error.message}
-                    </span>`);
+                    </div>`);
             
         });
     })
