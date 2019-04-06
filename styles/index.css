@@ -4,6 +4,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    height:100%;
+}
+
+html{
+    height:100%;
 }
 
 button, input[type="text"] {
@@ -23,10 +28,25 @@ button:hover:disabled {
 }
 
 .container {
-    max-width: 600px;
-    min-width: 250px;
-    margin: 0 auto;
-    background-color: rgb(248, 245, 245);
+    max-width: 1000px;
+    min-width: 320px;
+    margin: -4px auto;
+    background-color:white;
+    height:100%;
+}
+
+.heading-bar{
+    max-width:640px;
+    margin: 20px auto;
+    padding:20px;
+}
+
+.reset-minRate{
+    display:inline;
+}
+
+.js-star-rating{
+    display:inline;
 }
 
 .bookmarks-list {
@@ -136,18 +156,25 @@ button:hover:disabled {
     border:1px solid rgb(83, 83, 83);
 }
 
+.button-container{
+    position:absolute;
+    display:inline-block;
+}
+
 .add-bookmark{
-    position: absolute;
-    right: 20%;
-    height: 6rem;
-    width: 6rem;
-    background-color: rgb(135, 211, 135);
-    color: white;
+    position: fixed;
+    
+    right: 7%;
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: rgb(231, 231, 231);
+    color: rgb(0, 87, 19);
     border-radius: 50%;
     border: none;
     display: inline-block;
     font-size: 4.2rem;
     z-index: 2;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.15);
 }
 
 .form-entry {

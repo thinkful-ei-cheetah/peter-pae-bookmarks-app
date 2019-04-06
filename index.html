@@ -7,35 +7,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/float-grid.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
 <body>
     <div class="container">
-        <h1>Bookmarks</h1>
-
-        <div class="filter-bar" tabindex="0">
-            <div class="rate js-star-rating">
-                <input type="radio" role="button" class="js-filter-star" id="star1" name="rate1" value="1" />
-                <label for="star1" title="text">1 star</label>
-                <input type="radio" role="button" class="js-filter-star" id="star2" name="rate2" value="2" />
-                <label for="star2" title="text">2 star</label>
-                <input type="radio" role="button" class="js-filter-star" id="star3" name="rate3" value="3" />
-                <label for="star3" title="text">3 star</label>
-                <input type="radio" role="button" class="js-filter-star" id="star4" name="rate4" value="4" />
-                <label for="star4" title="text">4 star</label>
-                <input type="radio" role="button" class="js-filter-star" id="star5" name="rate5" value="5" />
-                <label for="star5" title="text">5 star</label>
+        <div class="heading-bar">
+            <h1>Bookmarks</h1>
+    
+            <div class="filter-bar" tabindex="0">
+                <div class="rate js-star-rating">
+                    <input type="radio" role="button" class="js-filter-star" id="star1" name="rate1" value="1" />
+                    <label for="star1" title="text">1star</label>
+                    <input type="radio" role="button" class="js-filter-star" id="star2" name="rate2" value="2" />
+                    <label for="star2" title="text">2star</label>
+                    <input type="radio" role="button" class="js-filter-star" id="star3" name="rate3" value="3" />
+                    <label for="star3" title="text">3star</label>
+                    <input type="radio" role="button" class="js-filter-star" id="star4" name="rate4" value="4" />
+                    <label for="star4" title="text">4star</label>
+                    <input type="radio" role="button" class="js-filter-star" id="star5" name="rate5" value="5" />
+                    <label for="star5" title="text">5star</label>
+                </div>
+                <button class="reset-minRate js-reset-minRate" type="reset-minRate">
+                    <span class="button-label">reset</span>
+                </button>
             </div>
-            <button class="reset-minRate js-reset-minRate" type="reset-minRate">
-                <span class="button-label">reset</span>
+        </div>
+        <div class="button-container">
+            <button id="bookmark-add" class="add-bookmark js-add-bookmark" type="add-bookmark">
+                <span class="button-label">+</span>
             </button>
         </div>
-        <button id="bookmark-add" class="add-bookmark js-add-bookmark" type="add-bookmark">
-            <span class="button-label">+</span>
-        </button>
         
-        <ul class="bookmarks-list js-bookmarks-list">
+        <ul class="bookmarks-list js-bookmarks-list row">
 
         </ul>
     </div>
@@ -75,7 +80,7 @@
                         <div class="form-controls js-form-controls">
                                 
                                 <button class="modal-bookmark-create js-modal-bookmark-create" type="submit">
-                                    <span class="button-label">Make &#9632;</span>
+                                    <span class="button-label">Make&#9632;</span>
                                 </button>
                         </div>
                     </div>

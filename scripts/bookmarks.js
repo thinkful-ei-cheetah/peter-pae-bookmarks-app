@@ -20,7 +20,7 @@ const bookmarksList = (function() {
     
         if(expanded){
         return `
-            <li class="js-bookmark-element ${expanded}" data-item-id="${item.id}">        
+            <li class="js-bookmark-element ${expanded} col-4" data-item-id="${item.id}">        
             <button class="title-bar js-title-bar" role="button" aria-label:"${item.title} bookmark">${item.title}</button>
                 <div class="card">
                     <div class="bookmark-description">DESCRIPTION: ${item.desc}.</div>
@@ -40,7 +40,7 @@ const bookmarksList = (function() {
     }
         else {
             
-            return `<li class="js-bookmark-element" data-item-id="${item.id}">
+            return `<li class="js-bookmark-element col-4" data-item-id="${item.id}">
             <div class="mark">
                 <button class="title-bar js-title-bar" role="button" aria-label:"${item.title} bookmark">${item.title}</button>
                 <div class="star-rating js-star-rating">
