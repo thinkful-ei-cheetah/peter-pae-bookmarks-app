@@ -5,7 +5,6 @@
 $(document).ready(function() {
 
 bookmarksList.bindEventListeners();
-bookmarksList.render();
 
 api.getItems()
   //.then(res => res.json())
@@ -13,8 +12,6 @@ api.getItems()
     items.forEach((item) => store.addItem(item));
     bookmarksList.render();
     });
-
-
     
 });
 

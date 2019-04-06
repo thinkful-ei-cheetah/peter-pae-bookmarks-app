@@ -64,10 +64,14 @@ const bookmarksList = (function() {
 
         if (store.adding){
             $('#modal').attr('class','modal');
+            $('#bookmark-add').attr('class','hidden');
+            console.log('add true');
         }
 
         if (!store.adding){
             $('#modal').attr('class','modal hidden');
+            $('#bookmark-add').attr('class','add-bookmark js-add-bookmark');
+            
         }
 
         const bookmarksItemsString = generateBookmarksString(items);
@@ -158,7 +162,9 @@ const bookmarksList = (function() {
                 document.getElementById("js-bookmarks-form").reset();
                 store.adding = false;
                 render();})
-            .catch(error => console.log(error));
+            .catch(error => 
+
+                console.log(error));
             console.log('create ran');
             
         });
@@ -174,9 +180,8 @@ const bookmarksList = (function() {
         });
 
         // $('body').on('click','.modal', event => {
-            
+        //     event.target.closest()
         //     console.log(event.target);
-        //     store.adding = false;
         //     render();
         // });
     }

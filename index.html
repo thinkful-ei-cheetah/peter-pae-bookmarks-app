@@ -14,21 +14,21 @@
     <div class="container">
         <h1>Bookmarks</h1>
         <div class="rate js-star-rating">
-            <input type="radio" id="star5" name="rate" value="5" />
+            <input type="radio" role="button" id="star5" name="rate" value="5" />
             <label for="star5" title="text">5 stars</label>
-            <input type="radio" id="star4" name="rate" value="4" />
+            <input type="radio" role="button"id="star4" name="rate" value="4" />
             <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
+            <input type="radio" role="button"id="star3" name="rate" value="3" />
             <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
+            <input type="radio" role="button"id="star2" name="rate" value="2" />
             <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
+            <input type="radio" role="button"id="star1" name="rate" value="1" />
             <label for="star1" title="text">1 star</label>
         </div>
         <button class="reset-minRate js-reset-minRate" type="reset-minRate">
             <span class="button-label">reset</span>
         </button>
-        <button class="add-bookmark js-add-bookmark" type="add-bookmark">
+        <button id="bookmark-add" class="add-bookmark js-add-bookmark" type="add-bookmark">
             <span class="button-label">+</span>
         </button>
         
@@ -46,21 +46,28 @@
                     </span>
             <form id="js-bookmarks-form" class="modal-form">
                     <div class="in-form">
-                        <div class="form-entry">
-                            <label for="bookmarks-entry">Title</label>
-                            <input type="text" name="title"  class="js-bookmarks-entry" placeholder="Title">
+
+                        <div class="form-content">
+                            <div class="form-entry">
+                                <label for="bookmarks-entry">Title</label>
+                                <input type="text" name="title"  class="js-bookmarks-entry" placeholder="Title">
+                            </div>
+                            <div class="form-entry">
+                                <label for="bookmarks-entry">URL</label>
+                                <input type="text" name="url"  class="js-bookmarks-entry" placeholder="URL">
+                            </div>
+                            <div class="form-entry">
+                                <label for="bookmarks-entry">Description</label>
+                                <input type="text" name="desc"  class="js-bookmarks-entry" placeholder="Description">
+                            </div>
+                            <div class="form-entry">
+                                <label for="bookmarks-entry">Rating</label>
+                                <input type="number" name="rating" value="5" min="1" max="5" class="js-bookmarks-entry" placeholder="1-5">
+                            </div>
                         </div>
-                        <div class="form-entry">
-                            <label for="bookmarks-entry">URL</label>
-                            <input type="text" name="url"  class="js-bookmarks-entry" placeholder="URL">
-                        </div>
-                        <div class="form-entry">
-                            <label for="bookmarks-entry">Description</label>
-                            <input type="text" name="desc"  class="js-bookmarks-entry" placeholder="Description">
-                        </div>
-                        <div class="form-entry">
-                            <label for="bookmarks-entry">Rating</label>
-                            <input type="number" name="rating" value="5" min="1" max="5" class="js-bookmarks-entry" placeholder="1-5">
+
+                        <div class='js-form-error'>
+                            <span class="error-message js-error-message">error placement</span>
                         </div>
                         
                         <div class="form-controls js-form-controls">
@@ -69,7 +76,7 @@
                                     <span class="button-label">Create</span>
                                 </button>
                         </div>
-                    </div>
+                    </divc>
 
             </form>
             
