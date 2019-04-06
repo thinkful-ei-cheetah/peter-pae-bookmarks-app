@@ -10,6 +10,9 @@ api.getItems()
   //.then(res => res.json())
     .then((items) => {
     items.forEach((item) => store.addItem(item));
+    if($(window).width()>640){
+      store.items.forEach(item => item.expanded = true);
+    }
     bookmarksList.render();
     });
     
